@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Privacy-first pose detection - all processing happens locally in your browser" />
+    <title>Pose Challenge - Privacy First</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div>
+          <h1>Pose Challenge</h1>
+          <p>Allow camera access to see live pose estimation powered by MoveNet.</p>
+        </div>
+        <div class="header-badges">
+          <span class="badge">🔒 Privacy &amp; Security</span>
+          <span class="badge">No Data Storage</span>
+        </div>
+    </header>
+
+    <main>
+      <section class="canvas-wrapper">
+        <video id="webcam" playsinline muted></video>
+        <canvas id="output"></canvas>
+        <div id="status" class="status">Initializing...</div>
+        <div id="timer" class="timer">15</div>
+        <div id="pose-reference" class="pose-reference">
+          <img id="pose-image" src="" alt="Pose reference" />
+        </div>
+      </section>
+      <section class="side-panel">
+        <div class="pose-panel">
+          <h2>Choose a target pose</h2>
+          <p>Select a preset pose to replicate.</p>
+          <div class="pose-selector">
+            <button class="pose-btn active" data-pose="tPose">T Pose</button>
+            <button class="pose-btn" data-pose="victory">Victory Pose</button>
+            <button class="pose-btn" data-pose="archer">Archer Pose</button>
+            <button class="pose-btn" data-pose="warrior">Warrior Pose</button>
+          </div>
+          <button id="random-select" class="secondary-btn" type="button">
+            🎲 Random Select
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Powered by TensorFlow.js MoveNet model.</small>
+    </footer>
+
+    <script src="assets/tf.min.js"></script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
